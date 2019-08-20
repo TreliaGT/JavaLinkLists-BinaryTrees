@@ -10,11 +10,11 @@ package com.mycompany.assessment1.ListLinks;
  * @author Trelia
  */
 public class LinkNode {
-    public double iData;
+    public String iData;
     public LinkNode next;
     public LinkNode prev;
 
-    public LinkNode(double dData) {
+    public LinkNode(String dData) {
         this.iData = dData;
     }
 

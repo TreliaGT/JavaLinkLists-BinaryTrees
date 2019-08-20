@@ -12,7 +12,7 @@ public class LinkListsCommands {
     private LinkNode first;
     private LinkNode last;
 
-    public LinkNode find(int key) 
+    public LinkNode find(String key) 
     { 
         LinkNode current = first; 
         while(current.iData != key) 
@@ -25,7 +25,7 @@ public class LinkListsCommands {
     return current; // found it
     }
 
-    public LinkNode delete(int key) 
+    public LinkNode delete(String key) 
     { 
         LinkNode current = first; 
         LinkNode previous = first;
@@ -50,7 +50,7 @@ public class LinkListsCommands {
     return(first==null);
     }
 
-    public void insertFirst(double d) 
+    public void insertFirst(String d) 
     {
     LinkNode newLink=new LinkNode(d);
         if(isEmpty()) {

@@ -12,13 +12,13 @@ import javafx.scene.Node;
  * @author Trelia
  */
 public class BinaryTreeNode {
-    int value;
-    Node left;
-    Node right;
+   public int iData;
+   public Node left;
+   public Node right;
  
-    BinaryTreeNode(int value) {
-        this.value = value;
-        right = null;
-        left = null;
+      public void displayNode()
+    {
+     
+       System.out.print(iData + " ");
     }
 }

@@ -12,6 +12,7 @@ import javafx.scene.Node;
  * @author Trelia
  */
 public class BinaryTreeCommands {
-      Node root;
-      
+      BinaryTreeNode root;
+
+    
 }
