@@ -103,12 +103,7 @@ public class Main {
       * @throws IOException 
       */
        public static void LinkListDisplaying() throws IOException{
-            System.out.println("Would you like to display the list in  traverse (Y/N)");
-            if(input.equals("y") ||input.equals("Y")){
-                
-            }else{
-                link.displayList();
-            }
+            link.displayList();
             LinkList();
        }
        
