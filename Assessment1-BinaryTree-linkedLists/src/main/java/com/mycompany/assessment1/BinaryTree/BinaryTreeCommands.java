@@ -20,13 +20,17 @@ public class BinaryTreeCommands {
         ".-..", "--" , "-.", "---" , ".--.", "--.-", ".-.", "..." , 
         "-", "..-" , "...-", ".--", "-..-" , "-.--" , "--." , ".----" , "..---" , "...--" , "....--" , ".....", "-...." , "--...", "---.." , "----.", "-----", ".-.-.-"};
     
+    /**
+     * Adds data to binary tree
+     * currently not working :(
+     */
     public void addData(){
        current = root;
       for (int i = 0; i < Code.length; i++){  
           char [] dots = Code[i].toCharArray();
           for (char dot : dots){
               if(dot == '.'){
-                if (!current.getRight().equals(null)) {
+                if (current.getRight() != null) {
                     current = current.getRight();
                 } else {
                     current.setRight(new BinaryTreeNode(letters[i], Code[i]));
@@ -44,11 +48,21 @@ public class BinaryTreeCommands {
         }
     }
     
+    /**
+     * decodes a code to letter
+     * @param Message
+     * @return 
+     */
     public String decodeLetter(String Message){
         return "";
     }
     
-    public String decodeCode(String Message){
+    /**
+     * codes a message 
+     * @param Message
+     * @return 
+     */
+    public String Code(String Message){
         return "";
     }
  
