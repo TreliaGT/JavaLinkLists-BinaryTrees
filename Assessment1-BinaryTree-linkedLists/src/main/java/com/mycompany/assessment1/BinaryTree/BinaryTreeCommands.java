@@ -26,26 +26,30 @@ public class BinaryTreeCommands {
      */
     public void addData(){
        current = root;
-      for (int i = 0; i < Code.length; i++){  
+      for (int i = 0; i < Code.length; i++){ 
+          int num = 0;
+           boolean FoundSpot =false;
           char [] dots = Code[i].toCharArray();
-          for (char dot : dots){
-              if(dot == '.'){
-                if (current.getRight() != null) {
-                    current = current.getRight();
-                } else {
+          while(FoundSpot){
+              if(dots[num] == '.'){
+                if(current.getRight() == null){
                     current.setRight(new BinaryTreeNode(letters[i], Code[i]));
+                    FoundSpot = true;
+                }else{
+                    num++;
                     current = current.getRight();
-                } 
-              }else if (dot == '-'){
-                if (current.getLeft() != null) {
-                    current = current.getLeft();
-                } else {
+                }
+              }else if (dots[num] == '-'){
+                if(current.getLeft() == null){
                     current.setLeft(new BinaryTreeNode(letters[i], Code[i]));
+                    FoundSpot = true;
+                }else{
+                    num++;
                     current = current.getLeft();
                 }
               }
            }
-        }
+      }
     }
     
     /**
