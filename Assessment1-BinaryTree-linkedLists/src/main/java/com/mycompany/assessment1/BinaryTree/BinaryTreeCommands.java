@@ -26,7 +26,7 @@ public class BinaryTreeCommands {
           char [] dots = Code[i].toCharArray();
           for (char dot : dots){
               if(dot == '.'){
-                if (current.getRight() != null) {
+                if (!current.getRight().equals(null)) {
                     current = current.getRight();
                 } else {
                     current.setRight(new BinaryTreeNode(letters[i], Code[i]));
