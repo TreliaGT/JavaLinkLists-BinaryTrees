@@ -44,7 +44,7 @@ public class BinaryTreeCommands {
                     current = current.getLeft();
                 }
               }
-          }
+           }
         }
     }
     
