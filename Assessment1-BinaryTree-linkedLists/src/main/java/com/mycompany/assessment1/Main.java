@@ -18,11 +18,13 @@ import com.mycompany.assessment1.BinaryTree.*;
  */
 public class Main {
       public static LinkListsCommands link = new LinkListsCommands();
+      public static BinaryTreeCommands binary = new BinaryTreeCommands();
        public static String input;
        
        
      public static void main(String[] args) throws IOException{
         link.AddingData();
+        binary.addData();
         Selection();
      }
      

@@ -24,10 +24,5 @@ public class LinkNode {
  public void displayLink()
  {
    System.out.println(iData);
- }
-
-        
-  
-
-    
+ }     
 }

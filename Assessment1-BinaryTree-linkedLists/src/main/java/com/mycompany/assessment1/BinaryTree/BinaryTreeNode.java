@@ -13,13 +13,51 @@ import org.w3c.dom.Node;
  * @author Trelia
  */
 public class BinaryTreeNode {
-   public int iData;
-   public Node left;
-   public Node right;
+   public char letter;
+   public String code;
+   public BinaryTreeNode left;
+   public BinaryTreeNode right;
  
-      public void displayNode()
-    {
-     
-       System.out.print(iData + " ");
+   public BinaryTreeNode(char data , String code){
+        this.letter = data;
+        this.code = code;
+        left = null;
+        right = null;
     }
+
+    public char getLetter() {
+        return letter;
+    }
+
+    public void setLetter(char letter) {
+        this.letter = letter;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public BinaryTreeNode getLeft() {
+        return left;
+    }
+
+    public void setLeft(BinaryTreeNode left) {
+        this.left = left;
+    }
+
+    public BinaryTreeNode getRight() {
+        return right;
+    }
+
+    public void setRight(BinaryTreeNode right) {
+        this.right = right;
+    }
+
+ 
+   
+   
 }
