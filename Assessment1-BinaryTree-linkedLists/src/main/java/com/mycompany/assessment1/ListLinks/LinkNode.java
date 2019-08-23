@@ -18,11 +18,15 @@ public class LinkNode {
         this.iData = dData;
     }
 
+    /**
+     * Displays data
+     */
  public void displayLink()
  {
-   System.out.print(iData + " ");
+   System.out.println(iData);
  }
 
+        
   
 
     

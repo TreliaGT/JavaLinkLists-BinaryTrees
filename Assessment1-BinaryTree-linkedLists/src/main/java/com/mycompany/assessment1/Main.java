@@ -22,6 +22,7 @@ public class Main {
        
        
      public static void main(String[] args) throws IOException{
+        link.AddingData();
         Selection();
      }
      
@@ -86,11 +87,7 @@ public class Main {
                }else if (input.equals("DD") ||input.equals("dd")){//displaying
                            LinkListDisplaying();
                }else if (input.equals("F") ||input.equals("f")){ //finding data
-                   System.out.println("Enter what one you wish to find");
-                           System.out.flush();
-                           input = getString();
-                          System.out.println(link.find(input));
-                           LinkList();
+                          LinkListFind();
                }else if (input.equals("Back") || input.equals("back")){ //back to main menu
                    Selection();
                }else{
@@ -105,6 +102,18 @@ public class Main {
        public static void LinkListDisplaying() throws IOException{
             link.displayList();
             LinkList();
+       }
+       
+       public static void LinkListFind() throws IOException{
+               System.out.println("Enter what one you wish to find");
+               System.out.flush();
+             input = getString();
+               if(link.find(input) == null){
+                   System.out.println("Doesn't Exist");
+               }else{
+                   System.out.println("This Exists");
+               }
+                  LinkList();
        }
        
        /**

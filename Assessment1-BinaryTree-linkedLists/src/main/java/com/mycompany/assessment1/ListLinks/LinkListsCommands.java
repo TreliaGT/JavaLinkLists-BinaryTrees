@@ -12,6 +12,11 @@ public class LinkListsCommands {
     private LinkNode first;
     private LinkNode last;
 
+    /**
+     * Finds an node in the linklist
+     * @param key
+     * @return 
+     */
     public LinkNode find(String key) 
     { 
         LinkNode current = first;
@@ -26,6 +31,11 @@ public class LinkListsCommands {
     return current; // found it
     }
 
+    /**
+     * Deletes a node from the link lists
+     * @param key
+     * @return 
+     */
     public LinkNode delete(String key) 
     { 
         LinkNode current = first;
@@ -67,11 +77,19 @@ public class LinkListsCommands {
         return current;
     }
 
+    /**
+     * Sees if the linklist is empty
+     * @return 
+     */
     public boolean isEmpty()
     {
         return(first==null || last == null);
     }
 
+    /**
+     * Inserts data in the front of the list
+     * @param d 
+     */
     public void insertFirst(String d) 
     {
         LinkNode newLink=new LinkNode(d);
@@ -85,6 +103,9 @@ public class LinkListsCommands {
         }
     }
 
+    /**
+     * displays the whole list 
+     */
     public void displayList()
     {
         LinkNode current = first; 
@@ -95,6 +116,24 @@ public class LinkListsCommands {
         System.out.println("");
     }
     
+    /**
+     * Adds the card data
+     */
+    public void AddingData(){
+        String[] Numbers = {"1", "2", "3", "4" , "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+        for (String a : Numbers){
+            insertFirst("Diamonds " + a);
+        }
+        for (String a : Numbers){
+            insertFirst("Hearts " + a);
+        }
+        for (String a : Numbers){
+            insertFirst("Clubs " + a);
+        }
+        for (String a : Numbers){
+            insertFirst("Spades " + a);
+        }
+    }
     
 }
 
