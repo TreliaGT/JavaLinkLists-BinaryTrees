@@ -43,5 +43,13 @@ public class BinaryTreeCommands {
           }
         }
     }
+    
+    public String decodeLetter(String Message){
+        return "";
+    }
+    
+    public String decodeCode(String Message){
+        return "";
+    }
  
 }
