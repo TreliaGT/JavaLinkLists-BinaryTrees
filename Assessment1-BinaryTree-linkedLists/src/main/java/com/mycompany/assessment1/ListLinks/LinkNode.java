@@ -20,7 +20,7 @@ public class LinkNode {
 
  public void displayLink()
  {
-   System.out.print(iData+" ");
+   System.out.print(iData + " ");
  }
 
   

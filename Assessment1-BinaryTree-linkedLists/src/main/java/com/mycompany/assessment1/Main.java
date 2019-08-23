@@ -10,7 +10,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import com.mycompany.assessment1.ListLinks.*;
-
+import com.mycompany.assessment1.BinaryTree.*;
 
 /**
  *
@@ -104,8 +104,12 @@ public class Main {
       */
        public static void LinkListDisplaying() throws IOException{
             System.out.println("Would you like to display the list in  traverse (Y/N)");
-        link.displayList();
-        LinkList();
+            if(input.equals("y") ||input.equals("Y")){
+                
+            }else{
+                link.displayList();
+            }
+            LinkList();
        }
        
        /**

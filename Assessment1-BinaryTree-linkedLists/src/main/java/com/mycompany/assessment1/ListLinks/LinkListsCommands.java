@@ -14,8 +14,9 @@ public class LinkListsCommands {
 
     public LinkNode find(String key) 
     { 
-        LinkNode current = first; 
-        while(current.iData != key) 
+        LinkNode current = first;
+        if (current == null) { return null; }
+        while(!current.iData.equals(key)) 
         {
         if(current.next == null) 
             return null; // didn’t find it
@@ -27,45 +28,69 @@ public class LinkListsCommands {
 
     public LinkNode delete(String key) 
     { 
-        LinkNode current = first; 
-        LinkNode previous = first;
-        while(current.iData != key)
+        LinkNode current = first;
+        if (current == null) { return null;}
+        while(!current.iData.equals(key))
         {
-            if(current.next == null)
-                return null; 
-            else{
-            previous = current; 
-            current = current.next;
+            if(current.next == null) {
+                return null;
             }
+            current = current.next;
         } // found it
-        if(current == first) 
-            first = first.next;
-        else 
-            previous.next = current.next; 
+        if(current == first) {
+            if (current.next == null) {
+                first = null;
+                last = null;
+            } else {
+                LinkNode next = first.next;
+                next.prev = null;
+                first = null;
+                first = next;
+            }
+        }
+        else if (current == last) {
+            if (current.prev == null) {
+                last = null;
+                first = null;
+            } else {
+                LinkNode prev = last.prev;
+                prev.next = null;
+                last = null;
+                last = prev;
+            }
+        } else {
+            LinkNode prev = current.prev;
+            LinkNode next = current.next;
+            prev.next = next;
+            next.prev = prev;
+        }
         return current;
     }
 
     public boolean isEmpty()
     {
-    return(first==null);
+        return(first==null || last == null);
     }
 
     public void insertFirst(String d) 
     {
-    LinkNode newLink=new LinkNode(d);
-        if(isEmpty()) {
-            last=newLink;
-            newLink.next=first; 
-            first=newLink; 
+        LinkNode newLink=new LinkNode(d);
+        if (isEmpty()) {
+            first = newLink;
+            last = newLink;
+        } else {
+            newLink.next = first;
+            first.prev = newLink;
+            first = newLink;
         }
     }
 
     public void displayList()
     {
         LinkNode current = first; 
-    while(current != null) {
-        current.displayLink(); 
-        current = current.next; 
+        while(current != null) {
+            current.displayLink(); 
+            current = current.next; 
         }
         System.out.println("");
     }
