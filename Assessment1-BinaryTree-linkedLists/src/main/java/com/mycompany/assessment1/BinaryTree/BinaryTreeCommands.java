@@ -13,7 +13,7 @@ package com.mycompany.assessment1.BinaryTree;
  */
 public class BinaryTreeCommands {
       BinaryTreeNode root;
-
+        BinaryTreeNode current;
     public char[] letters = {'A', 'B', 'C', 'D', 'E' , 'F' , 'G' , 'H' , 'I' , 'J', 'K', 'L' , 'M' , 'N' , 'O' , 'P', 'Q', 'R', 'S' , 'T' , 'U', 'V', 'W', 'X', 'Y' ,'Z', '1', '2', '3', '4', '5' , '6', '7', '8' , '9' , '.' };
     public String[] Code = {".-" , "-..." , "-.-.", "-.." , "." , 
         "..-.", "--.", "....", "..",  ".---" , "-.-" ,
@@ -21,7 +21,27 @@ public class BinaryTreeCommands {
         "-", "..-" , "...-", ".--", "-..-" , "-.--" , "--." , ".----" , "..---" , "...--" , "....--" , ".....", "-...." , "--...", "---.." , "----.", "-----", ".-.-.-"};
     
     public void addData(){
-        
+       current = root;
+      for (int i = 0; i < Code.length; i++){  
+          char [] dots = Code[i].toCharArray();
+          for (char dot : dots){
+              if(dot == '.'){
+                if (current.getRight() != null) {
+                    current = current.getRight();
+                } else {
+                    current.setRight(new BinaryTreeNode(letters[i], Code[i]));
+                    current = current.getRight();
+                } 
+              }else if (dot == '-'){
+                if (current.getLeft() != null) {
+                    current = current.getLeft();
+                } else {
+                    current.setLeft(new BinaryTreeNode(letters[i], Code[i]));
+                    current = current.getLeft();
+                }
+              }
+          }
+        }
     }
  
 }
