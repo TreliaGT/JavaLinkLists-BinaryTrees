@@ -116,6 +116,19 @@ public class LinkListsCommands {
         System.out.println("");
     }
     
+        /**
+     * displays the whole list 
+     */
+    public void rDisplayList()
+    {
+        LinkNode current = last; 
+        while(current != null) {
+            current.displayLink(); 
+            current = current.prev; 
+        }
+        System.out.println("");
+    }
+    
     /**
      * Adds the card data
      */

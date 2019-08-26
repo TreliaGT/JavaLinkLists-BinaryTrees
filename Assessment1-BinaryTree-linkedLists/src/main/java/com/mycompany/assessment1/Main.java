@@ -102,7 +102,16 @@ public class Main {
       * @throws IOException 
       */
        public static void LinkListDisplaying() throws IOException{
-            link.displayList();
+            System.out.println("Do you like to display the data in Reverse order (Y / N)");
+                           System.out.flush();
+                           input = getString();
+                           if(input.equals("Y") || input.equals("y")){
+                               link.rDisplayList();
+                           }else if (input.equals("N") || input.equals("n")){
+                               link.displayList();
+                           }else{
+                               LinkListDisplaying();
+                           }
             LinkList();
        }
        
