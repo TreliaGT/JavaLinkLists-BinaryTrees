@@ -24,7 +24,7 @@ public class Main {
        
      public static void main(String[] args) throws IOException{
         link.AddingData();
-        binary.addData();
+       binary.loopAddData();
         Selection();
      }
      
@@ -145,8 +145,12 @@ public class Main {
      /**
       * Start of the binary Tree example
       */
-     public static void binaryTree(){
+     public static void binaryTree() throws IOException{
          System.out.println("BinaryTree example");
+          System.out.flush();
+          input = getString();
+          System.out.println(binary.decodeLetter(input));          
+      
      }
      
      

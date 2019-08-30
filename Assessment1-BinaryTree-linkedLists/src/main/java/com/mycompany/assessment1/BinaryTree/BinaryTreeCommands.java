@@ -12,55 +12,79 @@ package com.mycompany.assessment1.BinaryTree;
  * @author Trelia
  */
 public class BinaryTreeCommands {
-      BinaryTreeNode root;
+      BinaryTreeNode root = new BinaryTreeNode();
         BinaryTreeNode current;
-    public char[] letters = {'A', 'B', 'C', 'D', 'E' , 'F' , 'G' , 'H' , 'I' , 'J', 'K', 'L' , 'M' , 'N' , 'O' , 'P', 'Q', 'R', 'S' , 'T' , 'U', 'V', 'W', 'X', 'Y' ,'Z', '1', '2', '3', '4', '5' , '6', '7', '8' , '9' , '.' };
+    public char[] letters = {'A', 'B', 'C', 'D', 'E' , 'F' , 'G' , 'H' , 'I' , 'J', 'K', 'L' , 'M' , 'N' , 'O' , 'P', 'Q', 'R', 'S' , 'T' , 'U', 'V', 'W', 'X', 'Y' ,'Z', 
+        '1', '2', '3', '4', '5' , '6', '7', '8' , '9' , '0', '.' };
     public String[] Code = {".-" , "-..." , "-.-.", "-.." , "." , 
         "..-.", "--.", "....", "..",  ".---" , "-.-" ,
         ".-..", "--" , "-.", "---" , ".--.", "--.-", ".-.", "..." , 
         "-", "..-" , "...-", ".--", "-..-" , "-.--" , "--." , ".----" , "..---" , "...--" , "....--" , ".....", "-...." , "--...", "---.." , "----.", "-----", ".-.-.-"};
     
+    
+    public void loopAddData(){
+        for(int i = 0; i < letters.length; i++){
+            addData(Code[i], letters[i]);
+        }
+    }
+    
+    
+    
+    
     /**
      * Adds data to binary tree
      * currently not working :(
      */
-    public void addData(){
-       current = root;
-      for (int i = 0; i < Code.length; i++){ 
-          char [] dots = Code[i].toCharArray();
-              if(dots[i] == '.'){
-                if(current.getRight() == null){
-                    current.setRight(new BinaryTreeNode(letters[i], Code[i]));
-                }else{
-                    current = current.getRight();
-                }
-              }else if (dots[i] == '-'){
-                if(current.getLeft() == null){
-                    current.setLeft(new BinaryTreeNode(letters[i], Code[i]));
-                }else{
-                    
+    public void addData(String mcode, char ltr){
+     current = root;
+        String signal = " ";
+ 
+        for (int i = 0; i < mcode.length(); i++) {
+            signal = mcode.substring(i, i + 1);
+            if (signal.equals(".")) {
+                if (current.getLeft() != null) {
+                    current = current.getLeft();
+                } else {
+                    current.setLeft(new BinaryTreeNode());
                     current = current.getLeft();
                 }
-              }
-      }
+            } else {
+                if (current.getRight() != null) {
+                    current = current.getRight();
+                } else {
+                    current.setRight(new BinaryTreeNode());
+                    current = current.getRight();
+                }
+            }
+        }
+        current.setLetter(ltr);
+        current.setCode(mcode);
     }
+      
+    
     
     /**
+     * remember space!!
      * decodes a code to letter
      * @param Message
      * @return 
      */
     public String decodeLetter(String Message){
-        return "";
-    }
-    
-    /**
-     * codes a message 
-     * @param Message
-     * @return 
-     */
-    public String Code(String Message){
-        return "";
-    }
+        current = root;
+        String word = "";
+        char[] Char = Message.toCharArray();
+        for (char item : Char){
+            if(item == '.'){
+               current = current.getLeft();
+            }else if (item == '-'){
+                current = current.getRight();
+            }else if (item == ' '){
+                word += current.getLetter();
+                current = root;
+            }  
+        } 
+        return word;
+    } 
+  
  
 }

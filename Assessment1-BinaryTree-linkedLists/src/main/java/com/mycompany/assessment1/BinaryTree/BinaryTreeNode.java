@@ -17,10 +17,11 @@ public class BinaryTreeNode {
    public String code;
    public BinaryTreeNode left;
    public BinaryTreeNode right;
- 
-   public BinaryTreeNode(char data , String code){
-        this.letter = data;
-        this.code = code;
+     public static final char EMPTY = ' ';
+     
+   public BinaryTreeNode(){
+       code = null;
+        letter = EMPTY;
         left = null;
         right = null;
     }
@@ -56,6 +57,7 @@ public class BinaryTreeNode {
     public void setRight(BinaryTreeNode right) {
         this.right = right;
     }
+ 
 
  
    
