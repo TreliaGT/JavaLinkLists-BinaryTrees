@@ -9,8 +9,8 @@ package com.mycompany.assessment1.ListLinks;
  * @author Trelia
  */
 public class LinkListsCommands {
-    private LinkNode first;
-    private LinkNode last;
+    public LinkNode first;
+    public LinkNode last;
 
     /**
      * Finds an node in the linklist

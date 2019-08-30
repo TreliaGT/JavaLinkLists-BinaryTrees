@@ -7,6 +7,7 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import com.mycompany.assessment1.ListLinks.*;
+import com.mycompany.assessment1.BinaryTree.*;
 
 /**
  *
@@ -14,16 +15,31 @@ import com.mycompany.assessment1.ListLinks.*;
  */
 public class Assessment1JUnitTest {
      LinkListsCommands list = new LinkListsCommands();
-        
-     @Test
-   public void LinkListFindTest(){
-      list.AddingData();
-       assertEquals( list.find("1") , null);
-   }
-
-
+     BinaryTreeCommands Binary = new BinaryTreeCommands();   
+     
     @Test
     public void test1(){
         assertEquals(1,1);
+    }
+    
+    @Test
+    public void LinkListTest(){
+       list.AddingData();
+     String actual =  list.first.iData;
+       assertEquals("Diamonds 2" , actual);
+    }
+    
+    @Test
+    public void LinkListFindTest(){
+        String key = "Diamond";
+        LinkListsCommands instance = new LinkListsCommands();
+        assertNull(instance.find(key));
+    }
+    
+    @Test
+    public void DecoderTest(){
+        Binary.loopAddData();
+        String expResult = "A";
+        assertEquals(Binary.decodeLetter(".-"), expResult);
     }
 }
