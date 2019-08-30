@@ -28,8 +28,8 @@ public class Assessment1JUnitTest {
        assertEquals( list.find("1") , null);
    }
 
-    @Test
-    public void something(){
-        assertEquals(1 , 1);
+     @Test
+    public void test1(){
+        assertEquals(1,1);
     }
 }
