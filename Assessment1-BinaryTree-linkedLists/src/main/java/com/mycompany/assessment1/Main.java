@@ -146,7 +146,7 @@ public class Main {
       * Start of the binary Tree example
       */
      public static void binaryTree() throws IOException{
-         System.out.println("BinaryTree example");
+         System.out.println("BinaryTree example, Please enter your coded message(please at the end of youe message add a space");
           System.out.flush();
           input = getString();
           System.out.println(binary.decodeLetter(input));          
