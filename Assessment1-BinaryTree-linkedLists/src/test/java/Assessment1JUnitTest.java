@@ -15,16 +15,12 @@ import com.mycompany.assessment1.ListLinks.*;
 public class Assessment1JUnitTest {
      LinkListsCommands list = new LinkListsCommands();
         
-    /**
-     * Tests if the linklist is able to find a value
-     */
-   @Test
+     @Test
    public void LinkListFindTest(){
       list.AddingData();
-      
-     // assertEquals( list.find("Diamonds 1") , null);
        assertEquals( list.find("1") , null);
    }
+
 
     @Test
     public void test1(){
