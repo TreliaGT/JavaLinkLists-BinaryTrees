@@ -14,9 +14,7 @@ import com.mycompany.assessment1.ListLinks.*;
  */
 public class Assessment1JUnitTest {
      LinkListsCommands list = new LinkListsCommands();
-    public Assessment1JUnitTest() {
-    }
-    
+        
     /**
      * Tests if the linklist is able to find a value
      */
@@ -28,7 +26,7 @@ public class Assessment1JUnitTest {
        assertEquals( list.find("1") , null);
    }
 
-     @Test
+    @Test
     public void test1(){
         assertEquals(1,1);
     }
