@@ -146,11 +146,11 @@ public class Main {
       * Start of the binary Tree example
       */
      public static void binaryTree() throws IOException{
-         System.out.println("BinaryTree example, Please enter your coded message");
+         System.out.println("BinaryTree example, Please enter your Morse code message");
           System.out.flush();
           input = getString();
           System.out.println(binary.decodeLetter(input + " "));          
-      
+      Selection();
      }
      
      
