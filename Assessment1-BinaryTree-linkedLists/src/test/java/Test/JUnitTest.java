@@ -19,7 +19,9 @@ public class JUnitTest {
     public JUnitTest() {
     }
           
-    
+    /**
+     * Tests if list can have an value
+     */
     @Test
     public void testLinkList(){
         LinkListsCommands list = new LinkListsCommands();
@@ -28,6 +30,9 @@ public class JUnitTest {
        assertEquals("Spades K" , actual);
     }
     
+    /**
+     * second tests if list can have an value
+     */
       @Test
     public void testLinkList2(){
         LinkListsCommands list = new LinkListsCommands();
@@ -36,14 +41,38 @@ public class JUnitTest {
        assertEquals("Diamonds 1" , actual);
     }
     
+    /**
+     * Test to not find if  value exists 
+     */
     @Test
     public void testLinkListFind(){
         String key = "Diamond";
-        LinkListsCommands instance = new LinkListsCommands();
-        assertNull(instance.find(key));
+        LinkListsCommands list = new LinkListsCommands();
+        list.AddingData();
+        assertNull(list.find(key));
     }
-   
     
+       /**
+     * Test 2 to find if value exists 
+     */
+    @Test
+    public void testLinkListFind2(){
+        String key = "Diamonds 1";
+        boolean result;
+        LinkListsCommands list = new LinkListsCommands();
+         list.AddingData();
+       if(list.find(key) == null){
+            result = false;
+        }else{
+           result = true;
+       }
+        assertTrue(result);
+    }
+    
+   
+    /**
+     * Test one for binary decoder
+     */
     @Test
     public void testBinaryDecoder(){
         BinaryTreeCommands Binary = new BinaryTreeCommands();
@@ -52,6 +81,9 @@ public class JUnitTest {
         assertEquals(expResult ,Binary.decodeLetter(".- "));
     }
     
+    /**
+     * Test 2 for binary decoder 
+     */
      @Test
     public void testBinaryDecoder2(){
         BinaryTreeCommands Binary = new BinaryTreeCommands();

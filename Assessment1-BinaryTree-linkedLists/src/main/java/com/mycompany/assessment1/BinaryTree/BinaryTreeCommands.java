@@ -14,6 +14,7 @@ package com.mycompany.assessment1.BinaryTree;
 public class BinaryTreeCommands {
       BinaryTreeNode root = new BinaryTreeNode();
         BinaryTreeNode current;
+        //arrays for both letters and code
     public char[] letters = {'A', 'B', 'C', 'D', 'E' , 'F' , 'G' , 'H' , 'I' , 'J', 'K', 'L' , 'M' , 'N' , 'O' , 'P', 'Q', 'R', 'S' , 'T' , 'U', 'V', 'W', 'X', 'Y' ,'Z', 
         '1', '2', '3', '4', '5' , '6', '7', '8' , '9' , '0', '.' };
     public String[] Code = {".-" , "-..." , "-.-.", "-.." , "." , 
@@ -22,6 +23,9 @@ public class BinaryTreeCommands {
         "-", "..-" , "...-", ".--", "-..-" , "-.--" , "--." , ".----" , "..---" , "...--" , "....--" , ".....", "-...." , "--...", "---.." , "----.", "-----", ".-.-.-"};
     
     
+    /**
+     * Loops to add all data to the binary Tree
+     */
     public void loopAddData(){
         for(int i = 0; i < letters.length; i++){
             addData(Code[i], letters[i]);
@@ -33,7 +37,6 @@ public class BinaryTreeCommands {
     
     /**
      * Adds data to binary tree
-     * currently not working :(
      */
     public void addData(String mcode, char ltr){
      current = root;
@@ -41,14 +44,14 @@ public class BinaryTreeCommands {
  
         for (int i = 0; i < mcode.length(); i++) {
             signal = mcode.substring(i, i + 1);
-            if (signal.equals(".")) {
+            if (signal.equals(".")) {//goes left if it's a .
                 if (current.getLeft() != null) {
                     current = current.getLeft();
                 } else {
                     current.setLeft(new BinaryTreeNode());
                     current = current.getLeft();
                 }
-            } else {
+            } else {// goes right if it's - or else
                 if (current.getRight() != null) {
                     current = current.getRight();
                 } else {
@@ -64,7 +67,7 @@ public class BinaryTreeCommands {
     
     
     /**
-     * remember space!!
+     * 
      * decodes a code to letter
      * @param Message
      * @return 

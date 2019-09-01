@@ -115,6 +115,10 @@ public class Main {
             LinkList();
        }
        
+       /**
+        * Allows a user to find if an value exists in the list
+        * @throws IOException 
+        */
        public static void LinkListFind() throws IOException{
                System.out.println("Enter what one you wish to find");
                System.out.flush();
@@ -144,6 +148,7 @@ public class Main {
      
      /**
       * Start of the binary Tree example
+      * Then Allows the user to decode an Morse Code message
       */
      public static void binaryTree() throws IOException{
          System.out.println("BinaryTree example, Please enter your Morse code message");
