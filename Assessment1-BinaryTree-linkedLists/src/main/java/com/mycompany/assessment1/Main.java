@@ -78,12 +78,7 @@ public class Main {
                System.out.flush();
                   input = getString();
             if (input.equals("A") ||input.equals("a")){ // adding 
-                        System.out.println("Enter what you wish to add to this list");
-                           System.out.flush();
-                           input = getString();
-                           link.insertFirst(input);
-                              System.out.println("Has been added");
-                              LinkList();
+                      LinkListAdd();
                } else if (input.equals("D") ||input.equals("d")){ //deleting
                    LinkListDelete();
                }else if (input.equals("DD") ||input.equals("dd")){//displaying
@@ -97,6 +92,27 @@ public class Main {
                }  
      }
     
+     /**
+      * Adds to linklist
+      */
+     public static void LinkListAdd() throws IOException{
+         String Suit = "";
+         String Rank = "";
+         System.out.println("Enter what Suit the card is first");
+                           System.out.flush();
+                           input = getString();
+                           Suit = input;
+       System.out.println("Enter what Rank the card is Second");
+                            System.out.flush();
+                           input = getString();
+                           Rank = input;
+                           link.insertFirst(Suit, Rank);
+                              System.out.println("Has been added");
+                              LinkList();
+     }
+     
+     
+     
      /**
       * Displays the link list 
       * @throws IOException 

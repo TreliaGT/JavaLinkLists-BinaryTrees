@@ -92,9 +92,9 @@ public class LinkListsCommands {
      * Inserts data in the front of the list
      * @param d 
      */
-    public void insertFirst(Card d) 
+    public void insertFirst(String s, String r) 
     {
-        LinkNode newLink=new LinkNode(d );
+        LinkNode newLink=new LinkNode(s , r );
         if (isEmpty()) {
             first = newLink;
             last = newLink;
@@ -137,16 +137,16 @@ public class LinkListsCommands {
     public void AddingData(){
         String[] Numbers = {"1", "2", "3", "4" , "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
         for (String a : Numbers){
-            insertFirst(new Card("Diamonds ", a));
+            insertFirst("Diamonds", a);
         }
         for (String a : Numbers){
-            insertFirst(new Card("Hearts ", a));
+            insertFirst("Hearts", a);
         }
         for (String a : Numbers){
-            insertFirst(new Card("Clubs ", a));
+            insertFirst("Clubs", a);
         }
         for (String a : Numbers){
-            insertFirst(new Card("Spades ", a));
+            insertFirst("Spades", a);
         }
     }
     
