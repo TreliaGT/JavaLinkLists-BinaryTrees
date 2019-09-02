@@ -135,16 +135,16 @@ public class LinkListsCommands {
     public void AddingData(){
         String[] Numbers = {"1", "2", "3", "4" , "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
         for (String a : Numbers){
-            insertFirst("Diamonds " + a);
+            insertFirst(new Card("Diamonds", a));
         }
         for (String a : Numbers){
-            insertFirst("Hearts " + a);
+            insertFirst(new Card("Hearts", a));
         }
         for (String a : Numbers){
-            insertFirst("Clubs " + a);
+            insertFirst(new Card("Clubs", a));
         }
         for (String a : Numbers){
-            insertFirst("Spades " + a);
+            insertFirst(new Card("Spades", a));
         }
     }
     
