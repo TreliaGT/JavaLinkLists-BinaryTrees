@@ -17,19 +17,20 @@ public class LinkListsCommands {
      * @param key
      * @return 
      */
-    public LinkNode find(String key) 
-    { 
-        LinkNode current = first;
-        if (current == null) { return null; }
-        while(!current.iData.equals(key)) 
-        {
+   public LinkNode find(String key) 
+{ 
+    LinkNode current = first;
+    if (current == null) { return null; }
+    String match = current.card.getSuit()+ " " + current.card.getRank();
+    while(!match.equals(key)) 
+    {
         if(current.next == null) 
-            return null; // didn’t find it
+            return null; // didn't find it
         else 
             current = current.next; 
-        }
-    return current; // found it
     }
+    return current; // found it
+}
 
     /**
      * Deletes a node from the link lists
@@ -40,7 +41,8 @@ public class LinkListsCommands {
     { 
         LinkNode current = first;
         if (current == null) { return null;}
-        while(!current.iData.equals(key))
+        String match = current.card.getSuit()+ " " + current.card.getRank();
+    while(!match.equals(key)) 
         {
             if(current.next == null) {
                 return null;
@@ -90,9 +92,9 @@ public class LinkListsCommands {
      * Inserts data in the front of the list
      * @param d 
      */
-    public void insertFirst(String d) 
+    public void insertFirst(Card d) 
     {
-        LinkNode newLink=new LinkNode(d);
+        LinkNode newLink=new LinkNode(d );
         if (isEmpty()) {
             first = newLink;
             last = newLink;
@@ -135,16 +137,16 @@ public class LinkListsCommands {
     public void AddingData(){
         String[] Numbers = {"1", "2", "3", "4" , "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
         for (String a : Numbers){
-            insertFirst(new Card("Diamonds", a));
+            insertFirst(new Card("Diamonds ", a));
         }
         for (String a : Numbers){
-            insertFirst(new Card("Hearts", a));
+            insertFirst(new Card("Hearts ", a));
         }
         for (String a : Numbers){
-            insertFirst(new Card("Clubs", a));
+            insertFirst(new Card("Clubs ", a));
         }
         for (String a : Numbers){
-            insertFirst(new Card("Spades", a));
+            insertFirst(new Card("Spades ", a));
         }
     }
     

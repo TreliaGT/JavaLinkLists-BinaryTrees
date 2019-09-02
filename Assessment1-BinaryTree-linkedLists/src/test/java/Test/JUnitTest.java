@@ -26,7 +26,7 @@ public class JUnitTest {
     public void testLinkList(){
         LinkListsCommands list = new LinkListsCommands();
        list.AddingData();
-     String actual =  list.first.iData;
+     String actual =  list.first.ReturnDisplayLink();
        assertEquals("Spades K" , actual);
     }
     
@@ -37,7 +37,7 @@ public class JUnitTest {
     public void testLinkList2(){
         LinkListsCommands list = new LinkListsCommands();
        list.AddingData();
-     String actual =  list.last.iData;
+     String actual = list.last.ReturnDisplayLink();
        assertEquals("Diamonds 1" , actual);
     }
     

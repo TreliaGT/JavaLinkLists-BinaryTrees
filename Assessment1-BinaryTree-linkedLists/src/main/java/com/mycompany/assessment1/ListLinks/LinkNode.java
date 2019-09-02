@@ -10,19 +10,26 @@ package com.mycompany.assessment1.ListLinks;
  * @author Trelia
  */
 public class LinkNode {
-    public String iData;
+ 
+  public Card card;
     public LinkNode next;
     public LinkNode prev;
-
-    public LinkNode(String dData) {
-        this.iData = dData;
+    public LinkNode(String suit, String rank) {
+        this.card = new Card(suit, rank);
     }
 
     /**
      * Displays data
      */
- public void displayLink()
- {
-   System.out.println(iData);
- }     
+     public void displayLink()
+     {
+         System.out.println(card.getSuit() + " " + card.getRank());
+     }
+ 
+     /**
+      * Returns display
+      */
+     public String ReturnDisplayLink(){
+         return card.getSuit() + " " + card.getRank();
+     }
 }
