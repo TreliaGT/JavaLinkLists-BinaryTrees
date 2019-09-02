@@ -21,9 +21,10 @@ public class LinkListsCommands {
 { 
     LinkNode current = first;
     if (current == null) { return null; }
-    String match = current.card.getSuit()+ " " + current.card.getRank();
+     String match = current.card.getSuit()+ " " + current.card.getRank();
     while(!match.equals(key)) 
     {
+         match = current.card.getSuit()+ " " + current.card.getRank();
         if(current.next == null) 
             return null; // didn't find it
         else 
@@ -44,6 +45,7 @@ public class LinkListsCommands {
         String match = current.card.getSuit()+ " " + current.card.getRank();
     while(!match.equals(key)) 
         {
+            match = current.card.getSuit()+ " " + current.card.getRank();
             if(current.next == null) {
                 return null;
             }
